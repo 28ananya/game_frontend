@@ -19,12 +19,15 @@ const Game = () => {
     try {
       const res = await axios.get("https://game-backend-2-5wlb.onrender.com/question");
       const fetchedQuestion = res.data;
-
-      // Generate 3 random incorrect answers (this should ideally come from an API)
+  
+      // Generate 3 random incorrect answers (ensuring uniqueness and excluding the correct city)
       const incorrectAnswers = ["Paris", "Tokyo", "New York", "Sydney"]; // Example options
       const filteredIncorrect = incorrectAnswers.filter(city => city !== fetchedQuestion.city);
-      const shuffledOptions = [fetchedQuestion.city, ...filteredIncorrect.sort(() => 0.5 - Math.random()).slice(0, 3)].sort(() => 0.5 - Math.random());
-
+      const selectedIncorrect = filteredIncorrect.sort(() => 0.5 - Math.random()).slice(0, 3);
+  
+      // Ensure only one correct city in the options
+      const shuffledOptions = [...selectedIncorrect, fetchedQuestion.city].sort(() => 0.5 - Math.random());
+  
       setQuestion({ ...fetchedQuestion, options: shuffledOptions });
     } catch (error) {
       console.error("Error fetching question:", error);
