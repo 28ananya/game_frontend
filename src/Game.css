@@ -1,0 +1,127 @@
+/* Game Background */
+body {
+  font-family: "Arial", sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #3a7bd5, #3a6073);
+  color: white;
+  padding: 20px;
+}
+
+/* Game Container */
+.game-container {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  color: black;
+}
+
+/* Score Display */
+.score {
+  font-size: 18px;
+  font-weight: bold;
+  background: gold;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 10px;
+}
+
+/* Question Card */
+.question-card {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+/* Clues List */
+.clues {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.clues li {
+  font-size: 16px;
+  padding: 8px;
+  background: #e0f7fa;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+
+/* Country Name */
+.country {
+  font-weight: bold;
+  font-size: 18px;
+  color: #007bff;
+}
+
+/* Buttons */
+.options button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.options button:hover {
+  background: #0056b3;
+}
+
+.submit-btn {
+  background: green;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: darkgreen;
+}
+
+/* Result Box */
+.result-box {
+  margin-top: 20px;
+  padding: 15px;
+  background: #ffeb3b;
+  border-radius: 5px;
+  color: black;
+}
+
+/* Sad Face Animation */
+.sad-face {
+  font-size: 50px;
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% { transform: translateX(-5px); }
+  50% { transform: translateX(5px); }
+  100% { transform: translateX(-5px); }
+}
+
+/* Next Button */
+.next-btn {
+  background: orange;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.next-btn:hover {
+  background: darkorange;
+}

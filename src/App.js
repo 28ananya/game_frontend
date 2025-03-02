@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Game from "./components/Game";
+import ChallengeFriend from "./components/ChallengeFriend";
+import Register from "./components/Register";
 
 function App() {
+  const [username, setUsername] = useState(null); // Store registered username
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/register" element={<Register onRegister={setUsername} />} /> {/* Pass onRegister */}
+      <Route path="/game" element={<Game username={username} />} /> {/* Pass username */}
+      <Route path="/challenge" element={<ChallengeFriend username={username} />} /> {/* Pass username */}
+    </Routes>
   );
 }
 
